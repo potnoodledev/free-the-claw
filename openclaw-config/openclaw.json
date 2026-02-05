@@ -8,17 +8,8 @@
         "api": "anthropic-messages",
         "models": [
           {
-            "id": "claude-sonnet-4-5-20250514",
-            "name": "Claude Sonnet 4.5 (via NIM)",
-            "reasoning": true,
-            "input": ["text", "image"],
-            "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
-            "contextWindow": 200000,
-            "maxTokens": 81920
-          },
-          {
-            "id": "claude-opus-4-5-20250514",
-            "name": "Claude Opus 4.5 (via NIM)",
+            "id": "__MODEL__",
+            "name": "__MODEL__ (via NIM)",
             "reasoning": true,
             "input": ["text", "image"],
             "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
@@ -37,7 +28,7 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "claude-code-free/claude-sonnet-4-5-20250514"
+        "primary": "claude-code-free/__MODEL__"
       }
     }
   }

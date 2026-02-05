@@ -12,9 +12,14 @@ A self-hosted AI chat setup using [openclaw](https://github.com/openclaw/opencla
    cd free-the-claw
    ```
 
-3. Set your API key in `docker-compose.yml`:
+3. Copy the example env file and add your API key:
+   ```
+   cp .env.example .env
+   ```
+   Edit `.env` and set your API key and model:
    ```
    NVIDIA_NIM_API_KEY=your-key-here
+   MODEL=stepfun-ai/step-3.5-flash
    ```
 
 4. Start the services:
@@ -26,6 +31,18 @@ A self-hosted AI chat setup using [openclaw](https://github.com/openclaw/opencla
 
 ## Configuration
 
-- **Model**: Change `MODEL` in `docker-compose.yml` (default: `moonshotai/kimi-k2-thinking`)
+- **Model**: Change `MODEL` in `.env` (default: `stepfun-ai/step-3.5-flash`)
+
+Popular choices:
+
+- `stepfun-ai/step-3.5-flash`
+- `moonshotai/kimi-k2.5`
+- `z-ai/glm4.7`
+- `minimaxai/minimax-m2.1`
+- `mistralai/devstral-2-123b-instruct-2512`
+
+See [`Claude Code Free`](claude-code-free/README.md) to add more models.
+
 - **Gateway token**: Change `OPENCLAW_GATEWAY_TOKEN` in `docker-compose.yml` (default: `changeme`)
+
 - **Ports**: claude-code-free runs on `8082`, openclaw on `18789`

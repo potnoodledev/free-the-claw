@@ -9,9 +9,9 @@ services:
       - "8082:8082"
     environment:
       # NVIDIA NIM API Key (required) - get from https://build.nvidia.com/settings/api-keys
-      - NVIDIA_NIM_API_KEY=
+      - NVIDIA_NIM_API_KEY=${NVIDIA_NIM_API_KEY}
       # Model selection
-      - MODEL=stepfun-ai/step-3.5-flash
+      - MODEL=${MODEL:-stepfun-ai/step-3.5-flash}
       # NVIDIA NIM settings
       - NVIDIA_NIM_MAX_TOKENS=81920
       - NVIDIA_NIM_TEMPERATURE=1.0
@@ -55,8 +55,8 @@ services:
     environment:
       - HOME=/home/node
       - TERM=xterm-256color
-      # Model name (must match claude-code-free MODEL for accurate display)
-      - MODEL=stepfun-ai/step-3.5-flash
+      # Model name (auto-synced from .env for accurate display)
+      - MODEL=${MODEL:-stepfun-ai/step-3.5-flash}
       # API key passed to openclaw config (can be any non-empty value for the proxy)
       - ANTHROPIC_API_KEY=sk-placeholder
       # Gateway access token - change this to secure your gateway

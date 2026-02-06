@@ -28,9 +28,9 @@ jobs:
           rm -rf claude-code-free/.git
           rm -rf openclaw/.git
 
-          # Re-add as regular directories
-          git add claude-code-free/
-          git add openclaw/
+          # Re-add as regular directories, including gitignored files (e.g. pnpm-lock.yaml)
+          git add --force claude-code-free/
+          git add --force openclaw/
           git add .gitmodules
 
       - name: Push to deploy branch

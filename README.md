@@ -79,7 +79,7 @@ The Codespace uses the same `docker-compose.yml` as local development with a thi
 
 ## Deploy on Railway (~$5/month)
 
-For persistent hosting, deploy on [Railway](https://railway.com) with two services from this repo.
+For persistent hosting, deploy on [Railway](https://railway.com) with two services from this repo. You will probably need the Hobby Plan ($5/month) as the free tier may not be enough for the image size.
 
 1. Click the **Deploy on Railway** badge above, or create a new project manually
 2. Add two services, both pointing to the **`deploy` branch** of this repo (a GitHub Action auto-flattens submodules into this branch on every push to main):

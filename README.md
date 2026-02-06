@@ -1,7 +1,7 @@
 # free-the-claw
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/polats/free-the-claw?quickstart=1)
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/template/rO6AbO)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/free-the-claw)
 
 A self-hosted AI chat setup using [openclaw](https://github.com/openclaw/openclaw) with free NVIDIA NIM models via [claude-code-free](https://github.com/Alishahryar1/claude-code-free).
 

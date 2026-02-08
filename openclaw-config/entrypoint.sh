@@ -40,13 +40,22 @@ if [ -n "$GITHUB_PAT_TOKEN" ]; then
   echo "GitHub credentials configured (git + gh CLI)"
 fi
 
-# Configure Twitter/X credentials if available
+# Configure Twitter/X credentials and fetch scripts if available
 if [ -n "$TWITTER_BEARER_TOKEN" ]; then
   export TWITTER_BEARER_TOKEN
   export TWITTER_CLIENT_ID
   export TWITTER_CLIENT_SECRET
   export TWITTER_REFRESH_TOKEN
-  echo "Twitter/X credentials configured"
+
+  TWITTER_DIR=/home/node/twitter
+  TWITTER_BASE_URL="https://raw.githubusercontent.com/polats/free-the-claw/main/openclaw-config/twitter"
+  mkdir -p "$TWITTER_DIR"
+  for script in tweet.js delete-tweet.js mentions.js refresh-token.js; do
+    wget -q -O "$TWITTER_DIR/$script" "$TWITTER_BASE_URL/$script" 2>/dev/null \
+    || curl -sfL -o "$TWITTER_DIR/$script" "$TWITTER_BASE_URL/$script" 2>/dev/null
+  done
+  chown -R node:node "$TWITTER_DIR"
+  echo "Twitter/X configured — scripts at $TWITTER_DIR/"
 fi
 
 chown -R node:node /home/node/.openclaw

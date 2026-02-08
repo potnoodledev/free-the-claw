@@ -65,6 +65,11 @@ services:
       - OPENCLAW_GATEWAY_PASSWORD=
       # GitHub PAT: enables agent persona (SOUL.md) + git operations
       - GITHUB_PAT_TOKEN=${GITHUB_PAT_TOKEN}
+      # Twitter/X: enables tweeting + reading mentions as @voxxelle_
+      - TWITTER_CLIENT_ID=${TWITTER_CLIENT_ID}
+      - TWITTER_CLIENT_SECRET=${TWITTER_CLIENT_SECRET}
+      - TWITTER_BEARER_TOKEN=${TWITTER_BEARER_TOKEN}
+      - TWITTER_REFRESH_TOKEN=${TWITTER_REFRESH_TOKEN}
     user: "root"
     volumes:
       - ./openclaw-config:/openclaw-config:ro

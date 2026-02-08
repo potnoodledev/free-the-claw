@@ -40,6 +40,15 @@ if [ -n "$GITHUB_PAT_TOKEN" ]; then
   echo "GitHub credentials configured (git + gh CLI)"
 fi
 
+# Configure Twitter/X credentials if available
+if [ -n "$TWITTER_BEARER_TOKEN" ]; then
+  export TWITTER_BEARER_TOKEN
+  export TWITTER_CLIENT_ID
+  export TWITTER_CLIENT_SECRET
+  export TWITTER_REFRESH_TOKEN
+  echo "Twitter/X credentials configured"
+fi
+
 chown -R node:node /home/node/.openclaw
 
 exec "$@"

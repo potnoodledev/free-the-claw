@@ -1,6 +1,0 @@
-[submodule "claude-code-free"]
-	path = claude-code-free
-	url = https://github.com/Alishahryar1/claude-code-free.git
-[submodule "openclaw"]
-	path = openclaw
-	url = https://github.com/openclaw/openclaw.git
